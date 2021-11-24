@@ -1,0 +1,52 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .form{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Home Page</a>
+        </li>
+<div class="alert2 alert-primary" role="alert">
+    <a herf="{% url 'register' %}" style="padding-left: 80px;">Register your details</a>
+</div>
+
+<form action="register" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label for="exampleInputText1" class="form-label">Name</label>
+    <input type="text" class="form-control" name="uname">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputName1" class="form-label">User ID</label>
+    <input type="text" class="form-control" name="uid">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="uemail" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Repeat Password</label>
+    <input type="password" class="form-control" name="repassword">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

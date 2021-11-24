@@ -1,0 +1,28 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+{% load crispy_forms_tags %}
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'home' %}">Home Page</a>
+</li>
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+  
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input name="uemail" type="email" id="uemail" class="form-control" placeholder="Email" required autofocus>
+      <div id="emailHelp" class="form-text">user email is confidential</div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+    <p class="text-left">Forgot Password? <a href="{% url 'sendmail' %}">click here</a>.</p>
+</div>
+</form>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+

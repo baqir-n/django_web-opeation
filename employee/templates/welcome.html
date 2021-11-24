@@ -1,0 +1,75 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+      body{
+        background-color: black;
+      }
+    
+        a {
+            font-size: 30px;
+        }
+        .alert2{
+            width: 400px;
+            margin-top: 100px;
+            margin-left: 340px;
+        }
+        #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #d9edf7;
+}
+
+#customers td, #customers th {
+  border: 1px solid #d9edf7;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+    </style>
+</head>
+<body>
+<div class="alert alert-info" role="alert">
+  <h1>Welcome! Operations Available:</h1>
+      
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <table id="customers">
+          <tr>
+            <td>
+              <a class="nav-link" href="{% url 'login' %}">Login &nbsp;&nbsp;&nbsp;</a>
+            </td>
+            <td>
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+
+{#</nav>#}
+{#<div class="alert2 alert-primary" role="alert">#}
+{#    <a herf="{% url 'login' %}" style="padding-left: 80px;">Login</a> <a herf="{% url 'register' %}" style="padding-left: 80px;">Register</a> <a herf="{% url 'show' %}" style="padding-right: 80px;">View Record</a>#}
+{#</div>#}
+
+</body>
+</html>

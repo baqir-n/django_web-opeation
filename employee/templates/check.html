@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% block content %}
+
+<div class="text-center" style="width: 80%; margin: 0 auto">
+  <h1>Welcome to the Password Reset Page</h1>
+  <h3>
+    Forgot your password? Please enter the email address you used to register
+    with us and we will send you a link to reset your password
+  </h3>
+</div>
+<br/>
+<div class="container py-5">
+<form method="POST"  action="{% url 'check' %}">
+  {% csrf_token %}
+  {{form}}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input name="uemail" type="email" id="uemail" class="form-control" placeholder="Email" required autofocus>
+      <div id="emailHelp" class="form-text">user email is confidential</div>
+    </div>
+
+  <button class="btn btn-primary" type="submit">Send</button>
+
+</form><br/>
+<div class="text-center">
+  <a href="{% url 'home' %}">Return to home page</a>
+</div>
+</div>
+{% endblock%}
